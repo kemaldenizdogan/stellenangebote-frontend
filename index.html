@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Stellenangebote App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/app.css">
+    <script src="./scripts/app.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Aktuelle Stellenangebote</h2>
+        <div class="inline-filters">
+            <input type="text" id="jobOfferInput" onkeyup="filter()" class="filter-input"
+                placeholder="Stellenbezeichnung" aria-label="Stellenbezeichnung">
+            <select id="categoryList" onchange="filter()" class="filter-select" aria-label="Tätigkeitsbereich">
+                <option>Tätigkeitsbereich</option>
+            </select>
+            <select id="companyList" onchange="filter()" class="filter-select" aria-label="Firma">
+                <option>Firma</option>
+            </select>
+        </div>
+        <table id="joTable">
+            <thead>
+                <tr>
+                    <th>
+                        <a href="#">
+                            <span onclick="sortByType(event, 'name')" class="order-icon order-default">Stellenbezeichnung</span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#">
+                            <span onclick="sortByType(event, 'category')" class="order-icon order-default">Tätigkeitsbereich</span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#">
+                            <span onclick="sortByType(event, 'company')" class="order-icon order-default">Firma</span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
